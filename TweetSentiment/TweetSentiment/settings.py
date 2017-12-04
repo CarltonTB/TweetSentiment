@@ -126,11 +126,6 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
-    "/startbootstrap/css",
-    "/startbootstrap/vendor/bootstrap/css",
-    "/startbootstrap/js",
-    "/startbootstrap/vendor/bootstrap/js",
-    
     )
 
 

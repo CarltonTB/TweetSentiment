@@ -23,6 +23,6 @@ admin.autodiscover()
 
 urlpatterns = [
     #this is the url for the main entry point
-    url(r'^tweets/', include('tweets.urls')),
+    url(r'^$', include('tweets.urls')),
     url(r'^admin/', admin.site.urls),
 ]
