@@ -1,0 +1,171 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+
+	<link rel="stylesheet" type="text/css" href="{% static 'startbootstrap-scrolling-nav-gh-pages/vendor/bootstrap/css/bootstrap.min.css' %}" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text.css" href="{% static 'startbootstrap-scrolling-nav-gh-pages/css/scrolling-nav.css' %}" />
+	
+	<style>
+	</style>
+	
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Tweet Sentiment Analyzer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Analyze Tweets</a>
+            </li>
+            <!--
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            </li>
+            -->
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!--
+    <header class="bg-primary text-white">
+      <div class="container text-center">
+        <h1>Welcome to Scrolling Nav</h1>
+        <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+      </div>
+    </header>
+-->
+
+    <section id="about">
+      <br></br>
+      <br></br>
+      <br></br>
+    
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-auto" style="text-align:center;">
+            <h2>Hello there!</h2>
+            <br></br>
+            <form action="/" method="POST" id="search">
+            {% csrf_token %}
+                <p>Search for tweets containing:</p>{{ form.query }}
+            <input type="submit" value="Submit" />
+        	</form>
+            <!--
+            <p class="lead">abdefg</p>
+            <ul>
+              <li>Clickable nav links that smooth scroll to page sections</li>
+            </ul>
+            -->
+            <br></br>
+    		<div class="col-md-12" height>
+        		<h6>Sentiment statistics:</h6>
+        		<p>Positive: {{ percent_pos }}%    |    Negative: {{ percent_neg }}%</p>
+   			</div>
+   			<br></br>
+            <table class="table table-bordered">
+            	<thead>
+            		<tr>
+	                	<td><strong>Sentiment</strong></td>
+	                	<td><strong>Tweet</strong></td>
+	                </tr>
+            	</thead>
+            	<tbody>
+	        		{% for pair in pairs %}
+	            		<tr>
+	            		{% for item in pair %}
+	                	<td>{{ item }}</td>
+	            		{% endfor %}
+	            		</tr>
+	        		{% endfor %}
+	        	</tbody>
+        	</table>
+          </div>
+        </div>
+      </div>
+
+      <br></br>
+    </section>
+
+<!--
+    <section id="services" class="bg-light">
+      <br></br>
+      <br></br>
+      <br></br>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Services we offer</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+          </div>
+        </div>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+    </section>
+-->
+    <section id="contact">
+      <br></br>
+      <br></br>
+      <br></br>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>About</h2>
+            <p class="lead">This project was developed using Django, Python Natural Langurage Toolkit, and Tweepy.
+             Tweet sentiment is determined using a Naive Bayes classifier trained on a 10,000 tweet training set.</p>
+          </div>
+        </div>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Developed by Carlton Brady [PUT YOUR GITHUB PAGES LINK HERE!]</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    
+   	<!--<link rel="stylesheet" type="text/css" href="{% static 'startbootstrap/vendor/bootstrap/css/bootstrap.min.css' %}" />-->
+    
+    <script src="{% static 'startbootstrap-scrolling-nav-gh-pages/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'startbootstrap-scrolling-nav-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>s
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'startbootstrap-scrolling-nav-gh-pages/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="{% static 'startbootstrap-scrolling-nav-gh-pages/js/scrolling-nav.js' %}"></script>
+
+  </body>
+
+</html>
