@@ -15,4 +15,16 @@
 		<nature>org.python.pydev.pythonNature</nature>
 		<nature>org.python.pydev.django.djangoNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>TweetSentiment/nltk_data</name>
+			<type>2</type>
+			<location>/Users/carltonbrady/nltk_data</location>
+		</link>
+		<link>
+			<name>TweetSentiment/tweets/NBC.pickle</name>
+			<type>1</type>
+			<location>/Users/carltonbrady/dev/eclipse/pydev/TweetSentiment/TweetSentiment/tweets/NBC.pickle</location>
+		</link>
+	</linkedResources>
 </projectDescription>
