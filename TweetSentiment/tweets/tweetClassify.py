@@ -40,5 +40,9 @@ def computeSentimentStats(tweetSentimentPairs):
         elif(pair[0] == "positive"):
             totalPos += 1
     total = totalNeg+ totalPos
-    return [round(100*(totalNeg/total),2),round(100*(totalPos/total),2)]
+    if(total > 0):
+        return [round(100*(totalNeg/total),2),round(100*(totalPos/total),2)]
+    else:
+        return ["N/A","N/A"]
+
 

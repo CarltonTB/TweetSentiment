@@ -29,6 +29,8 @@ def index(request):
         tweetSentimentPairs = []
         sentimentStats = ["N/A","N/A"]
         loadResults = False
+        percent_neg = "N/A"
+        percent_pos = "N/A"
     
     return render(request,'tweets/index.html',{'form':form,'tweets':tweets, 'pairs':tweetSentimentPairs, 'percent_neg':percent_neg,'percent_pos':percent_pos, 'loadResults':loadResults})
 
