@@ -19,7 +19,7 @@
 		<link>
 			<name>TweetSentiment/nltk_data</name>
 			<type>2</type>
-			<location>/Users/carltonbrady/nltk_data</location>
+			<location>/Users/carltonbrady/dev/eclipse/pydev/TweetSentiment/TweetSentiment/TweetSentiment/nltk_data</location>
 		</link>
 		<link>
 			<name>TweetSentiment/tweets/NBC.pickle</name>
