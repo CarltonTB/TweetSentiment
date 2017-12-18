@@ -2,15 +2,26 @@ from django.shortcuts import render
 from .forms import SearchForm
 import tweetSearch as tweetSearch
 import tweetClassify as tweetClassify
+from .forms import ClassifyForm
 
 
 
 # Create your views here.
 
 def index(request):
+    form2=ClassifyForm()
+    form = SearchForm()
+    tweets = []
+    tweetSentimentPairs = []
+    sentimentStats = ["N/A","N/A"]
+    loadResults = False
+    percent_neg = "N/A"
+    percent_pos = "N/A"
+    text = ""
+    textClassification = ""
     if request.method == 'POST':
         form = SearchForm(request.POST)
-        
+        form2 = ClassifyForm(request.POST)
         if form.is_valid():
             if len(str(form.cleaned_data)) > 0:
                 searchTerm = str(form.cleaned_data['query'])
@@ -22,16 +33,10 @@ def index(request):
                 percent_pos = sentimentStats[1]
                 loadResults = True
 
-            
-    else:
-        form = SearchForm()
-        tweets = []
-        tweetSentimentPairs = []
-        sentimentStats = ["N/A","N/A"]
-        loadResults = False
-        percent_neg = "N/A"
-        percent_pos = "N/A"
+        if form2.is_valid():
+            textClassification = tweetClassify.classifySentiment(form2.cleaned_data['text'])
+            text = form2.cleaned_data['text'] 
     
-    return render(request,'tweets/index.html',{'form':form,'tweets':tweets, 'pairs':tweetSentimentPairs, 'percent_neg':percent_neg,'percent_pos':percent_pos, 'loadResults':loadResults})
+    return render(request,'tweets/index.html',{'classifyForm': form2, 'text': text, 'textClassification':textClassification, 'searchForm':form,'tweets':tweets, 'pairs':tweetSentimentPairs, 'percent_neg':percent_neg,'percent_pos':percent_pos, 'loadResults':loadResults})
 
 

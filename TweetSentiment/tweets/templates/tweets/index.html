@@ -53,14 +53,23 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 mx-auto" style="text-align:center;">
+          
+           <form action="/" method="POST" id="classify">
+            {% csrf_token %}
+                <p>Enter some text to classify:</p>
+                <p>{{ classifyForm.text }}</p>
+            <input type="submit" value="Submit" />
+        	</form>
+        	<p><strong>Sentiment: </strong>{{ textClassification }}</p>
+            <br></br>
             <form action="/" method="POST" id="search">
             {% csrf_token %}
-                <p>Search for tweets containing:</p>{{ form.query }}
+                <p>Search for tweets containing:</p>{{ searchForm.query }}
             <input type="submit" value="Submit" />
         	</form>
             <br></br>
     		<div class="col-md-12" height>
-        		<h6>Sentiment statistics:</h6>
+        		<p><strong>Sentiment statistics:</strong></p>
         		<p>Positive: {{ percent_pos }}%    |    Negative: {{ percent_neg }}%</p>
    			</div>
    			<br></br>

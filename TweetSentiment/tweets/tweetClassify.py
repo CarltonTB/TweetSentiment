@@ -31,6 +31,13 @@ def classifyTweets(tweets, searchTerm):
         # uprint(tweet)
     return sentiment
 
+def classifySentiment(text):
+    """Classify the sentiment of some text"""
+    fobj = open(os.path.split(os.path.abspath(__file__))[0]+'/NBC.pickle', 'rb')
+    nbc = pickle.load(fobj)
+    fobj.close()
+    return nbc.classify(word_features(text))
+
 def computeSentimentStats(tweetSentimentPairs):
     totalNeg = 0.0
     totalPos = 0.0
