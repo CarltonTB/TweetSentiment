@@ -53,7 +53,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 mx-auto" style="text-align:center;">
-          
+          <!--
            <form action="/" method="POST" id="classify">
             {% csrf_token %}
                 <p>Enter some text to classify:</p>
@@ -61,7 +61,7 @@
             <input type="submit" value="Submit" />
         	</form>
         	<p><strong>Sentiment: </strong>{{ textClassification }}</p>
-            <br></br>
+            <br></br>-->
             <form action="/" method="POST" id="search">
             {% csrf_token %}
                 <p>Search for tweets containing:</p>{{ searchForm.query }}
