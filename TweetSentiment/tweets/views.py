@@ -37,6 +37,6 @@ def index(request):
             textClassification = tweetClassify.classifySentiment(form2.cleaned_data['text'])
             text = form2.cleaned_data['text'] 
     
-    return render(request,'tweets/index.html',{'classifyForm': form2, 'text': text, 'textClassification':textClassification, 'searchForm':form,'tweets':tweets, 'pairs':tweetSentimentPairs, 'percent_neg':percent_neg,'percent_pos':percent_pos, 'loadResults':loadResults})
+    return render(request,'tweets/index.html',{'classifyForm': form2, 'text': text, 'textClassification':textClassification, 'searchForm':form,' tweets':tweets, 'pairs':tweetSentimentPairs, 'percent_neg':percent_neg,'percent_pos':percent_pos, 'loadResults':loadResults})
 
 
