@@ -34,8 +34,4 @@ def index(request):
     
     return render(request,'tweets/index.html',{'form':form,'tweets':tweets, 'pairs':tweetSentimentPairs, 'percent_neg':percent_neg,'percent_pos':percent_pos, 'loadResults':loadResults})
 
-def home(request):
-    context = {
-        'test' : "happy thanksgiving my dudes",
-        }
-    return render(request,'tweets/home.html',context)
+
