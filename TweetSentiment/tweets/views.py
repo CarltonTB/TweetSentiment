@@ -10,15 +10,6 @@ import tweetClassify as tweetClassify
 
 def index(request):
 #     form2=ClassifyForm()
-    form = SearchForm()
-    tweets = []
-    tweetSentimentPairs = []
-    sentimentStats = ["N/A","N/A"]
-    loadResults = False
-    percent_neg = "N/A"
-    percent_pos = "N/A"
-    text = ""
-    textClassification = ""
     if request.method == 'POST':
         form = SearchForm(request.POST)
 #         form2 = ClassifyForm(request.POST)
@@ -37,7 +28,16 @@ def index(request):
 #             textClassification = tweetClassify.classifySentiment(form2.cleaned_data['text'])
 #             text = form2.cleaned_data['text']
 #'classifyForm': form2, 'text': text, 'textClassification':textClassification,  
-    
+    else:
+        form = SearchForm()
+        tweets = []
+        tweetSentimentPairs = []
+        sentimentStats = ["N/A","N/A"]
+        loadResults = False
+        percent_neg = "N/A"
+        percent_pos = "N/A"
+        text = ""
+        textClassification = ""
     return render(request,'tweets/index.html',{'searchForm':form,' tweets':tweets, 'pairs':tweetSentimentPairs, 'percent_neg':percent_neg,'percent_pos':percent_pos, 'loadResults':loadResults})
 
 
