@@ -53,7 +53,6 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 mx-auto" style="text-align:center;">
-          <!--
            <form action="/" method="POST" id="classify">
             {% csrf_token %}
                 <p>Enter some text to classify:</p>
@@ -61,10 +60,11 @@
             <input type="submit" value="Submit" />
         	</form>
         	<p><strong>Sentiment: </strong>{{ textClassification }}</p>
-            <br></br>-->
+            <br></br>
+            <h4>OR</h4>
             <form action="/" method="POST" id="search">
             {% csrf_token %}
-                <p>Search for tweets containing:</p>{{ searchForm.query }}
+                <p>Search for tweets containing specific text:</p>{{ searchForm.query }}
             <input type="submit" value="Submit" />
         	</form>
             <br></br>
@@ -118,7 +118,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Developed by Carlton Brady [PUT YOUR GITHUB PAGES LINK HERE!]</p>
+        <p class="m-0 text-center text-white">Developed by Carlton Brady</p>
       </div>
       <!-- /.container -->
     </footer>
