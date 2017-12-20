@@ -1,5 +1,5 @@
 
-import pickle as pickle
+import cPickle as pickle
 from nltk.corpus import stopwords
 import os
 import re
